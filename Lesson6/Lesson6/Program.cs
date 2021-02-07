@@ -22,23 +22,26 @@ namespace Lesson6
                 {
                     Console.Write("\nВведите ID процесса которого хотели бы завершить:\t");
                     int IdProcess = int.Parse(Console.ReadLine());
-
-                    foreach (Process process in Process.GetProcesses())
+                    try
                     {
-                        if (process.Id == IdProcess)
-                            process.Kill();
+                        Process processId = Process.GetProcessById(IdProcess);
+                        processId.Kill();
+                    }
+                    catch
+                    {
+                        Console.WriteLine("Вы ввели Id которого нет в списке запущенных.");
+
+                        ItsOk();
                     }
 
                     Console.WriteLine("Процесс завершён. ");
                     ItsOk();
-
                 }
 
                 if (choiceUser == "Name" || choiceUser == "NAME" || choiceUser == "name")
                 {
                     Console.Write("\nВведите имя процесса которого хотели бы завершить:\t");
                     string nameProcess = Console.ReadLine();
-
                     foreach (Process process in Process.GetProcesses())
                     {
                         if (process.ProcessName == nameProcess)
@@ -47,8 +50,8 @@ namespace Lesson6
 
                     Console.WriteLine("Процесс завершён. ");
                     ItsOk();
-
                 }
+
                 else
                 {
                     Console.WriteLine("Ой ёй, что-то пошло не так! Вы ввели иные данные от предложенных.");
