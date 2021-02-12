@@ -14,7 +14,7 @@
     <Setting Name="WhatProfession" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="FirstGreeting" Type="System.String" Scope="User">
+    <Setting Name="FirstGreeting" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Привет! Добро пожаловать, в мою консольную программу!</Value>
     </Setting>
   </Settings>

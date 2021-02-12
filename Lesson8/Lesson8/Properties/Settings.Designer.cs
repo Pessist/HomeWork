@@ -68,15 +68,12 @@ namespace Lesson8.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Привет! Добро пожаловать, в мою консольную программу!")]
         public string FirstGreeting {
             get {
                 return ((string)(this["FirstGreeting"]));
-            }
-            set {
-                this["FirstGreeting"] = value;
             }
         }
     }
